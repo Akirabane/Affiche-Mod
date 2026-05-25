@@ -1,0 +1,31 @@
+# Gradle
+.gradle/
+build/
+bin/
+out/
+libs/
+!src/main/resources/**/libs/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Run data
+run/
+runs/
+logs/
+crash-reports/
+
+# Local config
+*.local
+local.properties

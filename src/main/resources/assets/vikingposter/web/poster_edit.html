@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiche Viking</title>
+    <link rel="stylesheet" href="poster_edit.css">
+</head>
+<body>
+
+<div id="app">
+    <div class="panel">
+        <div class="panel-header">
+            <span class="rune">ᚠ</span>
+            <h1 id="panel-title">Affiche Viking</h1>
+            <span class="rune">ᚠ</span>
+        </div>
+
+        <div id="image-section" class="section">
+            <label class="field-label">URL de l'image</label>
+            <input id="image-url" type="text" class="text-input" placeholder="https://exemple.com/image.png">
+
+            <div class="size-row">
+                <div class="size-group">
+                    <label class="field-label">Largeur (blocs)</label>
+                    <input id="img-width" type="range" min="0.5" max="16" step="0.5" value="1" oninput="updateSizeLabel()">
+                    <span id="img-width-label" class="size-label">1.0</span>
+                </div>
+                <div class="size-group">
+                    <label class="field-label">Hauteur (blocs)</label>
+                    <input id="img-height" type="range" min="0.5" max="16" step="0.5" value="1" oninput="updateSizeLabel()">
+                    <span id="img-height-label" class="size-label">1.0</span>
+                </div>
+            </div>
+            <div class="ratio-row">
+                <label class="field-label">Ratio rapide</label>
+                <div class="btn-group">
+                    <button class="ratio-btn" onclick="applyRatio(16,9)">16:9</button>
+                    <button class="ratio-btn" onclick="applyRatio(9,16)">9:16</button>
+                    <button class="ratio-btn" onclick="applyRatio(4,3)">4:3</button>
+                    <button class="ratio-btn" onclick="applyRatio(1,1)">1:1</button>
+                </div>
+            </div>
+
+            <div class="size-row">
+                <div class="size-group">
+                    <label class="field-label">Décalage X (blocs)</label>
+                    <input id="img-offset-x" type="range" min="-8" max="8" step="0.5" value="0" oninput="updateOffsetLabel()">
+                    <span id="img-offset-x-label" class="size-label">0.0</span>
+                </div>
+                <div class="size-group">
+                    <label class="field-label">Décalage Y (blocs)</label>
+                    <input id="img-offset-y" type="range" min="-8" max="8" step="0.5" value="0" oninput="updateOffsetLabel()">
+                    <span id="img-offset-y-label" class="size-label">0.0</span>
+                </div>
+            </div>
+
+            <div id="img-preview-box">
+                <div id="img-preview-inner">
+                    <span id="img-preview-hint">Aperçu (si URL valide)</span>
+                    <img id="img-preview" src="" alt="" style="display:none">
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-cancel" onclick="cancel()">Annuler</button>
+            <button class="btn-submit" onclick="submit()">Valider</button>
+        </div>
+    </div>
+</div>
+
+<script src="poster_edit.js"></script>
+</body>
+</html>

@@ -29,3 +29,8 @@ crash-reports/
 # Local config
 *.local
 local.properties
+
+# Java compiled / crash dumps
+*.class
+hs_err_pid*
+replay_pid*
